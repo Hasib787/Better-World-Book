@@ -2,8 +2,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import './App.css';
@@ -13,11 +12,12 @@ import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
 import Deals from "./components/Deals/Deals";
 import NotFound from "./components/NotFound/NotFound";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   return (
     <Router> 
-      
+
       <Switch>
         <Route exact path="/">
           <Home/>
@@ -30,6 +30,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/checkout">
+          <Checkout />
         </Route>
         <Route path="/admin">
           <Admin />

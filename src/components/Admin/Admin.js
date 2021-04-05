@@ -1,13 +1,24 @@
 import React from 'react';
 import './Admin.css'
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import axios from 'axios';
 
 const Admin = () => {
     const handleAddBook = () => {
 
     }
     const handleImageUpload = (event) => {
-        console.log(event.target.files)
+        const imageData = new FormData();
+        imageData.set('key', '170f5f7b4d8b940b8be493fbd846036d');
+        imageData.append('image', event.target.files[0])
+
+        axios.post('https://api.imgbb.com/1/upload', imageData)
+          .then(function (response) {
+            console.log(response.data.data.display_url);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
     return (
         <div>

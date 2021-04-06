@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Admin.css'
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 
 const Admin = () => {
-    const handleAddBook = () => {
+    const [imageUrl, setImageUrl] = useState('');
 
+    const handleAddBook = (data) => {
+        const eventData ={
+            imageUrl: imageUrl
+        }
+        console.log(eventData);
+        const url=`http://localhost:5000/addBooks`;
+        fetch(url, {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(eventData)
+        })
+        .then(res => console.log('server site response'))
     }
     const handleImageUpload = (event) => {
         const imageData = new FormData();
@@ -14,7 +26,7 @@ const Admin = () => {
 
         axios.post('https://api.imgbb.com/1/upload', imageData)
           .then(function (response) {
-            console.log(response.data.data.display_url);
+            setImageUrl(response.data.data.display_url);
           })
           .catch(function (error) {
             console.log(error);
@@ -38,7 +50,7 @@ const Admin = () => {
                             Add Price
                             <input type="text" placeholder="Enter Price" />
                             Add Book Cover Photo
-                            <input type="file" name="Uploaded photo" onChange={handleImageUpload} />
+                            <input type="file" name="image" onChange={handleImageUpload} />
                             <Button onClick={handleAddBook}>Save</Button>
                         </Col>
                     </Col>

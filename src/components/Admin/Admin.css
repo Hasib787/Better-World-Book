@@ -25,12 +25,7 @@
     margin-bottom: 10px;
 
 }
-#addBook{
-    background-color:lightgray;
-    width: 1100px;
-    height:44rem;
-    margin-left: -15px;
-}
+
 #addBook-title{
     height: 70px;
     width: 75%;
@@ -38,12 +33,4 @@
 }
 #addBook-title h4{
     margin: 16px;
-}
-#inputField{
-    margin-top: 20px;
-    background-color:white;
-    height:300px;
-    width: 400px;
-    border: 1px solid black;
-    border-radius: 10px;
 }

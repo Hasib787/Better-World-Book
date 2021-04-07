@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Admin = () => {
     
     return (
-        <div>
+        <div className="admin-container">
             <Row>
                 <Col id="sidebar" xs={3}>
                     <h2>Book Shop</h2>
@@ -23,9 +23,9 @@ const Admin = () => {
                     <p><img src={editIcon} alt="edit icon"/><a><Link to="/editBook">Edit Book</Link></a></p>
                    </nav>
                 </Col>
-                <Col xs={9}>
+                    <div id="addBook-title" >
                     <h4>Add book</h4>
-                    </Col>
+                    </div>
             </Row>
         </div>
     );

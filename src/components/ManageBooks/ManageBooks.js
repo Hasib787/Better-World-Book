@@ -1,16 +1,34 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 import Admin from '../Admin/Admin';
+import './ManageBooks.css';
 
 const ManageBooks = () => {
     return (
         <div>
             <Admin></Admin>
-            <div>
-                <Col xs={9}>
-                    <h2>Hello</h2>
-                </Col>
+
+            <div className=" manageBookContainer">
+                <table className="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Book Name</th>
+                            <th scope="col">Author Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>price</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
             </div>
+
         </div>
     );
 };

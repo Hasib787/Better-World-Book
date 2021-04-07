@@ -2,6 +2,22 @@
     background-color: purple;
     color: white;
     height: 47rem;
+    text-align: center;
+}
+#sidebar h2{
+    margin-top:15px;
+}
+#sidebar a{
+    color: white;
+    text-decoration: none;
+}
+#sidebar p:hover{
+    background-color:rgb(77, 24, 77);
+  
+}
+#sidebar nav a{
+    margin-bottom: 10px;
+
 }
 #addBook{
     background-color:lightgray;

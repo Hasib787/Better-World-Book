@@ -10,7 +10,7 @@ const Home = () => {
         .then(data =>setBooks(data))
     }, [])
     return (
-        <div>
+        <div className="row">
             {
                 books.map(book =><Books book={book}></Books>)
             }

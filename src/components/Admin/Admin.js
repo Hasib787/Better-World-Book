@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Admin.css'
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import axios from 'axios';
-
+import gridIcon from '../../icons/grid 1.png';
+import editIcon from '../../icons/edit 1.png';
+import plusIcon from '../../icons/plus 1.png';
 const Admin = () => {
     const [imageUrl, setImageUrl] = useState('');
 
@@ -37,6 +39,14 @@ const Admin = () => {
             <Row>
                 <Col id="sidebar" xs={3}>
                     <h2>Book Shop</h2>
+                    <br/>
+                   <nav>
+                   <p><img src={gridIcon} alt="gridIcon"/><a href="#">Manage Books</a></p>
+                    <br/>
+                   <p><img src={plusIcon} alt="Plus icon"/>  <a href="#">Add Book</a></p>
+                    <br/>
+                    <p><img src={editIcon} alt="edit icon"/><a href="#">Edit Book</a></p>
+                   </nav>
                 </Col>
                 <Col xs={9}>
                     <h4>Add book</h4>

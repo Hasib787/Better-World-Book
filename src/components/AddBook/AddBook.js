@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 import axios from 'axios';
+import Admin from '../Admin/Admin';
+import './AddBook.css';
 const AddBook = () => {
     const [imageUrl, setImageUrl] = useState('');
 
@@ -32,22 +34,35 @@ const AddBook = () => {
     }
     return (
         <div>
-            <Row>
-                <Col id="addBook">
-                    <Col id="inputField">
-                        <p>Book Name</p>
-                        <input type="text" placeholder="Enter Name" />
-                        <p>Author Name </p>
-                        <input type="text" placeholder="Enter Name" />
-                        <br />
-                        Add Price
-                        <input type="text" placeholder="Enter Price" />
-                        Add Book Cover Photo
-                        <input type="file" name="image" onChange={handleImageUpload} />
-                        <Button onClick={handleAddBook}>Save</Button>
-                    </Col>
-                </Col>
-            </Row>
+            <Admin></Admin>
+            <div className="addbooks">
+                <Form>
+                    <Form.Row>
+                        <Form.Group as={Col} controlId="text">
+                            <Form.Label className="text-label">Book Name</Form.Label>
+                            <Form.Control type="text" placeholder="Book Name" />
+                        </Form.Group>
+
+                        <Form.Group as={Col} controlId="text">
+                            <Form.Label className="text-label">Author Name</Form.Label>
+                            <Form.Control type="text" placeholder="Author Name" />
+                        </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
+                        <Form.Group as={Col} controlId="text">
+                            <Form.Label className="text-label">Add Price</Form.Label>
+                            <Form.Control type="number" placeholder="Enter Price" />
+                        </Form.Group>
+
+                        <Form.Group>
+                            <Form.File className="text-label" onChange={handleImageUpload} id="exampleFormControlFile1" label="Add Book Cover Photo" />
+                        </Form.Group>
+                    </Form.Row>
+                </Form>
+            </div>
+            <div id="saveButton">
+                <Button onClick={handleAddBook}>Save</Button>
+            </div>
         </div>
     );
 };

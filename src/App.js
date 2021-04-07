@@ -15,6 +15,7 @@ import NotFound from "./components/NotFound/NotFound";
 import Checkout from "./components/Checkout/Checkout";
 import AddBook from "./components/AddBook/AddBook";
 import ManageBooks from "./components/ManageBooks/ManageBooks";
+import EditBook from "./components/EditBook/EditBook";
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
         </Route>
         <Route path="/manageBooks">
           <ManageBooks />
+        </Route>
+        <Route path="/editBook">
+          <EditBook />
         </Route>
         <Route path="/deals">
           <Deals />

@@ -13,6 +13,8 @@ import Admin from "./components/Admin/Admin";
 import Deals from "./components/Deals/Deals";
 import NotFound from "./components/NotFound/NotFound";
 import Checkout from "./components/Checkout/Checkout";
+import AddBook from "./components/AddBook/AddBook";
+import ManageBooks from "./components/ManageBooks/ManageBooks";
 
 function App() {
   return (
@@ -36,6 +38,12 @@ function App() {
         </Route>
         <Route path="/admin">
           <Admin />
+        </Route>
+        <Route path="/addBook">
+          <AddBook />
+        </Route>
+        <Route path="/manageBooks">
+          <ManageBooks />
         </Route>
         <Route path="/deals">
           <Deals />

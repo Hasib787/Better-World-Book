@@ -4,6 +4,9 @@
     height: 47rem;
     text-align: center;
 }
+#sidebar img{
+    width: 25px;
+}
 #sidebar h2{
     margin-top:15px;
 }

@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Books from '../Books/Books';
 
 const Home = () => {
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/books')
+        .then(res => res.json())
+        .then(data =>setBooks(data))
+    }, [])
     return (
         <div>
-            <h1>This is Home</h1>
+            {
+                books.map(book =><Books book={book}></Books>)
+            }
         </div>
     );
 };

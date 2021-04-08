@@ -1,0 +1,53 @@
+.login-form input {
+    display: block;
+    margin-top: 30px;
+    padding: 8px;
+    margin-left: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 330px;
+}
+#button{
+    width: 330px;
+    margin: 31px 10px;
+    padding: 8px;
+    color: white;
+    background-color:orangered;
+}
+#haveAccount{
+    text-align: center;
+}
+.error{
+    color:red;
+    margin-left:14px;
+}
+.signIn-google-facebook{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.signIn-google-facebook Button{
+    margin:10px;
+    width: 330px;
+    background-color: white;
+}
+#facebookLogo{
+    width: 30px;
+    margin-left: -73px;
+}
+#googleLogo{
+    width: 30px;
+    margin-left: -91px;
+}
+
+/*  Small devices (landscape phones, 576px and up) */
+@media only screen and (max-width: 576px) {
+    .login-form input{
+      
+      margin-left:0;
+    }
+    .bg-image{
+        margin-top: -83px;
+        height: 1500px;
+    }
+   
+  }

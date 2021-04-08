@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import './Books.css';
 
 const Books = (props) => {
     const {imageUrl, name} = props.book;
@@ -12,7 +13,10 @@ const Books = (props) => {
                     <Card.Text>
                         Some quick example 
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <div className="card-footer bg-transparent book-card-footer d-flex align-items-center justify-content-between ">
+                            <h3 class="text-orange-color fw-bold fs-2">$</h3>
+                            <Button className="btn fw-bold text-uppercase px-3 py-2">Buy Now</Button>
+                        </div>
                 </Card.Body>
             </Card>
         </div>

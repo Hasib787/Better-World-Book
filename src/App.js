@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,10 +17,13 @@ import AddBook from "./components/AddBook/AddBook";
 import ManageBooks from "./components/ManageBooks/ManageBooks";
 import EditBook from "./components/EditBook/EditBook";
 
-function App() {
-  return (
-    <Router> 
+export  const UserContext = createContext();
 
+function App() {
+  const [loggedInUser, setLoggedInUser] = useState({})
+  return (
+    <UserContext.Provider value ={[loggedInUser, setLoggedInUser]}>
+    <Router> 
       <Switch>
         <Route exact path="/">
           <Home/>
@@ -58,6 +61,7 @@ function App() {
       </Switch>
   
   </Router>
+  </UserContext.Provider>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Books from '../Books/Books';
+import Header from '../Header/Header';
 
 const Home = () => {
     const [books, setBooks] = useState([]);
@@ -10,10 +11,13 @@ const Home = () => {
         .then(data =>setBooks(data))
     }, [])
     return (
-        <div className="row">
-            {
+        <div>
+            <Header></Header>
+           <div  className="row">
+           {
                 books.map(book =><Books book={book}></Books>)
             }
+           </div>
         </div>
     );
 };

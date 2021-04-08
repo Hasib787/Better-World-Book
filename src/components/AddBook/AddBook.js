@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Col, Form, Row } from 'react-bootstrap';
+import { Button, Col, Form } from 'react-bootstrap';
 import axios from 'axios';
 import Admin from '../Admin/Admin';
 import './AddBook.css';
+import { useForm } from 'react-hook-form';
 const AddBook = () => {
+    const { handleSubmit } = useForm();
+    
     const [imageUrl, setImageUrl] = useState('');
 
     const handleAddBook = (data) => {
@@ -36,16 +39,16 @@ const AddBook = () => {
         <div>
             <Admin></Admin>
             <div className="addbooks">
-                <Form>
+                <Form onSubmit={handleSubmit(handleAddBook)}>
                     <Form.Row>
                         <Form.Group as={Col} controlId="text">
                             <Form.Label className="text-label">Book Name</Form.Label>
-                            <Form.Control type="text" placeholder="Book Name" />
+                            <Form.Control name="bookName" type="text" placeholder="Book Name" />
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="text">
                             <Form.Label className="text-label">Author Name</Form.Label>
-                            <Form.Control type="text" placeholder="Author Name" />
+                            <Form.Control name="" type="text" placeholder="Author Name" />
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>

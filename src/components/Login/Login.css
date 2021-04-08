@@ -1,3 +1,6 @@
+.logo{
+    margin:  45px 0 60px 195px;
+}
 .login-form input {
     display: block;
     margin-top: 30px;
@@ -12,15 +15,12 @@
     margin: 31px 10px;
     padding: 8px;
     color: white;
-    background-color:orangered;
+    background-color:rgb(28, 132, 230);
 }
 #haveAccount{
     text-align: center;
 }
-.error{
-    color:red;
-    margin-left:14px;
-}
+
 .signIn-google-facebook{
     text-align: center;
     margin-bottom: 50px;
@@ -44,10 +44,6 @@
     .login-form input{
       
       margin-left:0;
-    }
-    .bg-image{
-        margin-top: -83px;
-        height: 1500px;
     }
    
   }

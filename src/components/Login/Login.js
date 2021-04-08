@@ -111,7 +111,7 @@ const Login = () => {
 
     return (
         <div>
-            <div>
+            <div className="logo">
                 <h2>BOOK SHOP</h2>
             </div>
             <Card className={classes.root}>

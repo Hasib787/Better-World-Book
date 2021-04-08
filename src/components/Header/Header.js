@@ -3,10 +3,10 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { useContext } from 'react';
-// import { UserContext } from '../../App';
+import { UserContext } from '../../App';
 
 const Header = () => {
-    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <div className="header-container">
         {/* Nav Start  */}
@@ -25,10 +25,10 @@ const Header = () => {
                             <p><a><Link to="/home">Home</Link></a></p>
                         </li>
                         <li className="nav-item">
-                           <p> <a><Link to="/orders/${idRide}">Orders</Link></a></p>
+                           <p> <a><Link to="/orders">Orders</Link></a></p>
                         </li>
                         <li className="nav-item">
-                           <p> <a><Link to="/admin">Admin</Link></a></p>
+                           <p> <a><Link to="/admin/${bookId}">Admin</Link></a></p>
                         </li>
                         <li className="nav-item">
                            <p><a><Link to="/deals">Deals</Link></a></p>

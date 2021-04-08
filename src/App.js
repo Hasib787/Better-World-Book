@@ -16,6 +16,7 @@ import Checkout from "./components/Checkout/Checkout";
 import AddBook from "./components/AddBook/AddBook";
 import ManageBooks from "./components/ManageBooks/ManageBooks";
 import EditBook from "./components/EditBook/EditBook";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 export  const UserContext = createContext();
 
@@ -40,9 +41,9 @@ function App() {
         <Route path="/checkout">
           <Checkout />
         </Route>
-        <Route path="/admin">
+        <PrivateRoute path="/admin/:bookId">
           <Admin />
-        </Route>
+        </PrivateRoute>
         <Route path="/addBook">
           <AddBook />
         </Route>

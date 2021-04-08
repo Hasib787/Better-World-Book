@@ -1,32 +1,44 @@
 import React from 'react';
-import Header from '../Header/Header'
+import { Button } from 'react-bootstrap';
+import Header from '../Header/Header';
+import './Checkout.css';
 
 const Checkout = () => {
     
     return (
-        <div>
+        <div className="container">
             <Header></Header>
-            <h1>Checkout</h1>
-            <div>
+           <div className="checkout">
+                <h2>Checkout</h2>    
+            <div className="checkoutCard">
             <table className="table table-borderless">
                     <thead>
                         <tr>
-                            <th scope="col">Book Name</th>
-                            <th scope="col">Author Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Quantity</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>sdf</td>
+                            <td>JavaScript</td>
+                            <td>1</td>
+                            <td>$223</td>
                         </tr>
-                        
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>1</td>
+                            <td>$223</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>1</td>
+                            <td>$223</td>
+                        </tr>
                     </tbody>
                 </table>
+            </div>
+            <div><Button className="float-right">Checkout</Button></div>
             </div>
         </div>
     );

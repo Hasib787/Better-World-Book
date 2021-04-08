@@ -1,0 +1,11 @@
+.checkout{
+    margin: 60px 0 0 45px;
+}
+.checkout table thead{
+    border-bottom: 1px solid lightgray;
+}
+.checkoutCard{
+    margin: 25px 0 0 5px;
+    border-radius: 7px;
+    box-shadow: lightgray 10px 10px 25px;
+}

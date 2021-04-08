@@ -2,11 +2,12 @@ import React from 'react';
 import Admin from '../Admin/Admin';
 import './ManageBooks.css';
 
-const ManageBooks = () => {
+const ManageBooks = (props) => {
+    // const{name} = props.manageBook;
     return (
         <div>
-            <Admin></Admin>
-
+            
+        <Admin></Admin>
             <div className=" manageBookContainer">
                 <table className="table table-borderless">
                     <thead>
@@ -22,7 +23,7 @@ const ManageBooks = () => {
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>@mdo</td>
-                            <td>price</td>
+                            <td>sdf</td>
                         </tr>
                         
                     </tbody>

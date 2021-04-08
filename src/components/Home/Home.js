@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Books from '../Books/Books';
 import Header from '../Header/Header';
 import './Home.css';
-import searchIcon from '../../icons/search 1.png';
 
 const Home = () => {
     const [books, setBooks] = useState([]);
@@ -17,7 +16,6 @@ const Home = () => {
             <Header></Header>
             <div class="search-bar col-md-6 mx-auto">
                 <div class="search-box my-5">
-                    <img src={searchIcon} alt=""/>
                     <input id="search-field" type="text" class="form-control" placeholder="Search Book"/>
                     <button class="btn btn-primary search-btn">Search</button>
                 </div>

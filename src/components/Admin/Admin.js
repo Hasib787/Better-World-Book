@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState,useEffect } from 'react';
 import AddBook from '../AddBook/AddBook';
 import './Admin.css'
 import { Col, Row } from 'react-bootstrap';
@@ -6,9 +6,16 @@ import gridIcon from '../../icons/grid 1.png';
 import editIcon from '../../icons/edit 1.png';
 import plusIcon from '../../icons/plus 1.png';
 import { Link } from 'react-router-dom';
+import ManageBooks from '../ManageBooks/ManageBooks';
 
 const Admin = () => {
-    
+    const [bookDetails, setBookDetails] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/books')
+        .then(res => res.json())
+        .then(data => setBookDetails(data))
+    },[])
     return (
         <div className="admin-container">
             <Row>
@@ -26,7 +33,11 @@ const Admin = () => {
                     <div id="addBook-title" >
                     <h4>Add book</h4>
                     </div>
+                    {
+                        bookDetails.map(manageBook =><ManageBooks manageBook={manageBook}></ManageBooks>)
+                    }
             </Row>
+
         </div>
     );
 };

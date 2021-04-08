@@ -5,12 +5,14 @@ import Admin from '../Admin/Admin';
 import './AddBook.css';
 import { useForm } from 'react-hook-form';
 const AddBook = () => {
-    const { handleSubmit } = useForm();
+    const { handleSubmit } = useForm()
     
     const [imageUrl, setImageUrl] = useState('');
 
     const handleAddBook = (data) => {
+        console.log(data.name);
         const eventData = {
+            name: data.name,
             imageUrl: imageUrl
         }
         console.log(eventData);
@@ -43,18 +45,18 @@ const AddBook = () => {
                     <Form.Row>
                         <Form.Group as={Col} controlId="text">
                             <Form.Label className="text-label">Book Name</Form.Label>
-                            <Form.Control name="bookName" type="text" placeholder="Book Name" />
+                            <Form.Control name="bookName"  type="text" placeholder="Book Name" />
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="text">
                             <Form.Label className="text-label">Author Name</Form.Label>
-                            <Form.Control name="" type="text" placeholder="Author Name" />
+                            <Form.Control name="authorName" type="text" placeholder="Author Name" />
                         </Form.Group>
                     </Form.Row>
                     <Form.Row>
                         <Form.Group as={Col} controlId="text">
                             <Form.Label className="text-label">Add Price</Form.Label>
-                            <Form.Control type="number" placeholder="Enter Price" />
+                            <Form.Control name="addPrice" type="number" placeholder="Enter Price" />
                         </Form.Group>
 
                         <Form.Group>

@@ -1,3 +1,11 @@
 .book-card-footer{
     border: 0;
 }
+#price{
+    margin-left: -24px;
+    color: rgb(81, 71, 221);
+}
+#buy-btn{
+    background-color: rgb(81, 71, 221);
+    margin-right: -16px;
+}

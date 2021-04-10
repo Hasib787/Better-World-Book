@@ -3,19 +3,17 @@ import { Card, Button } from 'react-bootstrap';
 import './Books.css';
 
 const Books = (props) => {
-    const {imageUrl, name} = props.book;
+    const { bookName, authorName, addPrice,imageUrl} = props.book;
     return (
         <div className="col-md-3">
             <Card style={{ margin:'20px', width: '18rem' }}>
-                <Card.Img style={{ margin: '15px', height: '200px', width: '90%'}} variant="top"  src={imageUrl} />
+                <Card.Img style={{ margin: '15px', height: '250px', width: '90%'}} variant="top"  src={imageUrl} />
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text>
-                        Some quick example 
-                    </Card.Text>
+                    <Card.Title>{bookName}</Card.Title>
+                    <Card.Text>{authorName}</Card.Text>
                     <div className="card-footer bg-transparent book-card-footer d-flex align-items-center justify-content-between ">
-                            <h3 class="text-orange-color fw-bold fs-2">$</h3>
-                            <Button className="btn fw-bold text-uppercase px-3 py-2">Buy Now</Button>
+                            <h3 id="price" class="fw-bold fs-2">${addPrice}</h3>
+                            <Button id="buy-btn" className="btn fw-bold px-2.5 py-1.5">Buy Now</Button>
                         </div>
                 </Card.Body>
             </Card>

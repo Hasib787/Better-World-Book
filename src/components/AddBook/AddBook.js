@@ -18,8 +18,7 @@ const AddBook = () => {
             addPrice: data.addPrice,
             imageUrl: imageUrl
         }
-        console.log(eventData);
-        const url = `http://localhost:5000/addBooks`;
+        const url = `https://ancient-sea-74243.herokuapp.com/addBooks`;
         fetch(url, {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },

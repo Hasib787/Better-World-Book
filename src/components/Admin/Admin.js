@@ -7,16 +7,28 @@ const Admin = () => {
     const [bookDetails, setBookDetails] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/books')
+        fetch('https://ancient-sea-74243.herokuapp.com/books')
             .then(res => res.json())
             .then(data => setBookDetails(data))
     }, [])
+    console.log(bookDetails)
     return (
         <div>
             <AdminHeader></AdminHeader>
+            <table className="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Book Name</th>
+                        <th scope="col">Author Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                </table>
             {
                 bookDetails.map(book =><ManageBooks book={book}></ManageBooks>)
             }
+            
 
         </div>
     );

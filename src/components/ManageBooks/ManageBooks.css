@@ -1,8 +1,3 @@
-.manageBookContainer{
-    background-color: white;
-    width: 72%;
-    border-radius: 10px;
-    margin: -662px 0 0 400px;
-}
-.bookNavBar{
+#deleteIcon img{
+    width: 25px;
 }

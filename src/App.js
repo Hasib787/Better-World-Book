@@ -14,7 +14,6 @@ import Deals from "./components/Deals/Deals";
 import NotFound from "./components/NotFound/NotFound";
 import Checkout from "./components/Checkout/Checkout";
 import AddBook from "./components/AddBook/AddBook";
-import ManageBooks from "./components/ManageBooks/ManageBooks";
 import EditBook from "./components/EditBook/EditBook";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
@@ -41,14 +40,11 @@ function App() {
         <Route path="/checkout">
           <Checkout />
         </Route>
-        <PrivateRoute path="/admin/:bookId">
+        <PrivateRoute path="/admin">
           <Admin />
         </PrivateRoute>
         <Route path="/addBook">
           <AddBook />
-        </Route>
-        <Route path="/manageBooks">
-          <ManageBooks />
         </Route>
         <Route path="/editBook">
           <EditBook />

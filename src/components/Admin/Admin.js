@@ -23,7 +23,7 @@ const Admin = () => {
                     <h2>Book Shop</h2>
                     <br/>
                    <nav>
-                   <p><img src={gridIcon} alt="gridIcon"/><a><Link to="/manageBooks">Manage Books</Link></a></p>
+                   <p><img src={gridIcon} alt="gridIcon"/><a><Link to="/admin">Manage Books</Link></a></p>
                     <br/>
                    <p><img src={plusIcon} alt="Plus icon"/><a> <Link to="/addBook">Add Book</Link></a></p>
                     <br/>
@@ -33,11 +33,22 @@ const Admin = () => {
                     <div id="addBook-title" >
                     <h4>Add book</h4>
                     </div>
-                    {
-                        bookDetails.map(manageBook =><ManageBooks manageBook={manageBook}></ManageBooks>)
-                    }
             </Row>
-
+                <div className="manegeBooks">
+                <table className="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Book Name</th>
+                            <th scope="col">Author Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    </table>
+                    {
+                        bookDetails.map(book=> <ManageBooks book={book}></ManageBooks>)
+                    }
+                </div>
         </div>
     );
 };

@@ -28,7 +28,7 @@ const Header = () => {
                            <p> <a><Link to="/orders">Orders</Link></a></p>
                         </li>
                         <li className="nav-item">
-                           <p> <a><Link to="/admin/${bookId}">Admin</Link></a></p>
+                           <p> <a><Link to="/admin">Admin</Link></a></p>
                         </li>
                         <li className="nav-item">
                            <p><a><Link to="/deals">Deals</Link></a></p>

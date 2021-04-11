@@ -1,21 +1,22 @@
 import React from 'react';
-import Admin from '../Admin/Admin';
+import deleteIcon from '../../icons/delete.png';
 import './ManageBooks.css';
 
 const ManageBooks = (props) => {
-     const{bookName, authorName, addPrice} = props.manageBook;
+    const {bookName, authorName, addPrice} = props.book;
+
+    const handleDeleteItem = () =>{
+        console.log('delete clicked')
+    }
     return (
-        <div>
-            
-        <Admin></Admin>
-            <div className=" manageBookContainer">
-                <table className="table table-borderless">
-                    <thead>
+        <div>     
+                 <table>
+                 <thead>
                         <tr>
-                            <th scope="col">Book Name</th>
-                            <th scope="col">Author Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Action</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,13 +24,11 @@ const ManageBooks = (props) => {
                             <td>{bookName}</td>
                             <td>{authorName}</td>
                             <td>${addPrice}</td>
-                            <td>sdf</td>
+                            <td id="deleteIcon"><a onClick={handleDeleteItem}><img src={deleteIcon} alt=""/></a></td>
                         </tr>
                         
                     </tbody>
                 </table>
-            </div>
-
         </div>
     );
 };

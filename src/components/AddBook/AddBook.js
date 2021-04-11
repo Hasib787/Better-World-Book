@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Button, Col, Form } from 'react-bootstrap';
 import axios from 'axios';
-import Admin from '../Admin/Admin';
 import './AddBook.css';
 import { useForm } from 'react-hook-form';
+import AdminHeader from '../AdminHeader/AdminHeader';
 
 const AddBook = () => {
     const { register, handleSubmit } = useForm()
@@ -42,7 +42,7 @@ const AddBook = () => {
     }
     return (
         <div>
-            <Admin></Admin>
+            <AdminHeader></AdminHeader>
             <div className="addbooks">
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Form.Row>

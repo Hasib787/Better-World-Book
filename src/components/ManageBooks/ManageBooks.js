@@ -3,7 +3,7 @@ import Admin from '../Admin/Admin';
 import './ManageBooks.css';
 
 const ManageBooks = (props) => {
-    // const{name} = props.manageBook;
+     const{bookName, authorName, addPrice} = props.manageBook;
     return (
         <div>
             
@@ -20,9 +20,9 @@ const ManageBooks = (props) => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>{bookName}</td>
+                            <td>{authorName}</td>
+                            <td>${addPrice}</td>
                             <td>sdf</td>
                         </tr>
                         

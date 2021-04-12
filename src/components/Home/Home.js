@@ -16,14 +16,14 @@ const Home = () => {
 
     useEffect(()=>{
         const savedCart = getDatabaseCart();
-        const productkeys = Object.keys(savedCart);
+        const productIds = Object.keys(savedCart);
        
         fetch('https://ancient-sea-74243.herokuapp.com/bookitemByIds',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(productkeys)
+            body: JSON.stringify(productIds)
         })
         .then(res => res.json())
         .then(data => setCart(data))

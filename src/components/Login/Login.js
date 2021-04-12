@@ -112,7 +112,7 @@ const Login = () => {
     return (
         <div>
             <div className="logo">
-                <h2>BOOK SHOP</h2>
+                <h2>BETTER WORLD BOOK</h2>
             </div>
             <Card className={classes.root}>
                 <CardContent>

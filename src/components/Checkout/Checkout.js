@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import Header from '../Header/Header';
 import './Checkout.css';
 
 const Checkout = () => {
-    
+    const {bookId} = useParams();
+    const [product, setProduct] = useState([]) 
+
+    useEffect(()=>{
+        fetch('https://ancient-sea-74243.herokuapp.com/bookitem/'+bookId)
+        .then(res => res.json())
+        .then(data => setProduct(data))
+    },[bookId])
+
     return (
         <div className="container">
             <Header></Header>
@@ -21,19 +30,9 @@ const Checkout = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td>JavaScript</td>
+                            <td>{product.bookName}</td>
                             <td>1</td>
-                            <td>$223</td>
-                        </tr>
-                        <tr>
-                            <td>JavaScript</td>
-                            <td>1</td>
-                            <td>$223</td>
-                        </tr>
-                        <tr>
-                            <td>JavaScript</td>
-                            <td>1</td>
-                            <td>$223</td>
+                            <td>${product.addPrice}</td>
                         </tr>
                     </tbody>
                 </table>

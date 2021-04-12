@@ -15,7 +15,7 @@ const Admin = () => {
     return (
         <div>
             <AdminHeader></AdminHeader>
-            <table className="table table-borderless">
+            <table id="table" className="table table-borderless">
                 <thead>
                     <tr>
                         <th scope="col">Book Name</th>

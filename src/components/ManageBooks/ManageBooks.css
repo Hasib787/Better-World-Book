@@ -1,9 +1,17 @@
 .manegeBooks{
     background-color: white;
-    width: 72%;
-    border-radius: 10px;
-
+    
+   
 }
+ul li{
+    display: inline;
+    margin-left: 28%;
+    
+  }
 #deleteIcon img{
     width: 25px;
+}
+#managebook-table{
+    width: 67%;
+    margin-left: 27%;
 }

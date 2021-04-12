@@ -14,13 +14,31 @@ const ManageBooks = (props) => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                   
+
                 }
             })
     }
     return (
         <div className="manegeBooks">
-            <table>
+
+            <div className=" navbar-collapse justify-content-center">
+                <ul className="navbar-nav ">
+                    <li className="nav-item">
+                        <p>{bookName}</p>
+                    </li>
+                    <li className="nav-item">
+                        <p>{authorName}</p>
+                    </li>
+                    <li className="nav-item">
+                        <p>$ {addPrice}</p>
+                    </li>
+                    <li className="nav-item">
+                        <p id="deleteIcon"><a onClick={() => handleDeleteItem(_id)}><img src={deleteIcon} alt="" /></a> </p>
+                    </li>
+                </ul>
+            </div>
+
+            {/* <table  id="managebook-table" className="table table-borderless">
                 <tbody>
                     <tr>
                         <td>{bookName}</td>
@@ -30,7 +48,7 @@ const ManageBooks = (props) => {
                     </tr>
                 </tbody>
 
-            </table>
+            </table> */}
         </div>
     );
 };

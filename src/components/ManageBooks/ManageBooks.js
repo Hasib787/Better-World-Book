@@ -38,17 +38,7 @@ const ManageBooks = (props) => {
                 </ul>
             </div>
 
-            {/* <table  id="managebook-table" className="table table-borderless">
-                <tbody>
-                    <tr>
-                        <td>{bookName}</td>
-                        <td>{authorName}</td>
-                        <td>$ {addPrice}</td>
-                        <td id="deleteIcon"><a onClick={() => handleDeleteItem(_id)}><img src={deleteIcon} alt="" /></a></td>
-                    </tr>
-                </tbody>
-
-            </table> */}
+           
         </div>
     );
 };

@@ -11,7 +11,7 @@ const AdminHeader = () => {
         <div className="admin-container">
             <Row>
                 <Col id="sidebar" xs={3}>
-                    <h2>Book Shop</h2>
+                    <h2>BETTER WORLD BOOKS</h2>
                     <br />
                     <nav>
                         <p><img src={gridIcon} alt="gridIcon" /><a><Link to="/admin">Manage Books</Link></a></p>

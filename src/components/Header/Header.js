@@ -13,7 +13,7 @@ const Header = () => {
         <nav className="container navbar navbar-expand-lg navbar-light">
 
             <div className="container d-flex justify-content-right">
-                <div><h2>BOOK SHOP</h2></div>
+                <div><h2>BETTER WORLD BOOKS</h2></div>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">

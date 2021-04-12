@@ -19,6 +19,9 @@ ul li{
     text-decoration: none;
     font-weight: bold;
   }
+  #navbarNavAltMarkup{
+    margin-right: 28%;
+  }
   #btn{
     background-color: blue;
    color: white; 

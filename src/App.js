@@ -7,7 +7,7 @@ import {
 
 import './App.css';
 import Home from "./components/Home/Home";
-import Header from "./components/Header/Header";
+import Orders from "./components/Orders/Orders";
 import Login from "./components/Login/Login";
 import Admin from "./components/Admin/Admin";
 import Deals from "./components/Deals/Deals";
@@ -31,8 +31,8 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/header">
-          <Header />
+        <Route path="/orders">
+          <Orders />
         </Route>
         <Route path="/login">
           <Login />

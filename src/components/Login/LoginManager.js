@@ -117,3 +117,12 @@ export  const updateUserName = name => {
       console.log(error);
     });
   }
+  export const storeAuthToken = () => {
+    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+    .then(function(idToken) {
+          sessionStorage.setItem('token', idToken);
+      }).catch(function(error) {
+        // Handle error
+      });
+}
+

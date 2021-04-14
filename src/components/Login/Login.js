@@ -12,7 +12,7 @@ import googleLogo from '../../images/google-logo.png';
 import { useContext, useState } from 'react';
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
-import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, handleSignOut, initializeLoginFramework, signInWithEmailAndPassword } from './LoginManager';
+import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, handleSignOut, initializeLoginFramework, signInWithEmailAndPassword, storeAuthToken } from './LoginManager';
 
 const useStyles = makeStyles({
     root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 });
 
 const Login = () => {
-    const {register, watch, errors } = useForm();
+    const { register, watch, errors } = useForm();
     const onSubmit = data => console.log(data);
     console.log(watch("example"));
 
@@ -70,6 +70,7 @@ const Login = () => {
     const handleResponse = (res, redirect) => {
         setUser(res);
         setLoggedInUser(res);
+        storeAuthToken();
         if (redirect) {
             history.replace(from);
         }
@@ -77,21 +78,13 @@ const Login = () => {
 
     const handleBlur = (event) => {
         let isFromValid = true;
-        // if (event.target.name === 'email') {
-        //     isFromValid = /^\S+@\S+\.\S+/.test(event.target.value);
-        // }
-        // if (event.target.name === 'password') {
-        //     const isPasswordValid = event.target.value.length > 6;
-        //     const isPasswordNumber = /\d{1}/.test(event.target.value);
-        //     isFromValid = isPasswordValid && isPasswordNumber;
-        // }
         if (isFromValid) {
             const newUserInfo = { ...user };
             newUserInfo[event.target.name] = event.target.value;
             setUser(newUserInfo);
         }
     }
-     const handleSubmitSignIn = (event) => {
+    const handleSubmitSignIn = (event) => {
         if (newUser && user.email && user.password) {
             createUserWithEmailAndPassword(user.name, user.email, user.password)
                 .then(res => {
@@ -109,6 +102,7 @@ const Login = () => {
         event.preventDefault();
     }
 
+    
     return (
         <div>
             <div className="logo">
@@ -122,13 +116,13 @@ const Login = () => {
                                 !newUser ? <h3 id="haveAccount">Create an account <Link onClick={() => setNewUser(!newUser)} name="newUser"><label htmlFor="newUser"></label></Link></h3>
                                     : <h3 id="haveAccount">Login <Link onClick={() => setNewUser(!newUser)} name="newUser"><label htmlFor="newUser"></label></Link></h3>
                             }
-                            {!newUser && < input name="name"  onBlur={handleBlur} placeholder="Name" />}
-                            
-                            < input name="email" type="email"  onBlur={handleBlur} placeholder="Email" />
-                           
-                            < input name="password" type="password"  onBlur={handleBlur} placeholder="Password" />
-                           
-                            {!newUser && < input name="confirmPassword" type="password"  onBlur={handleBlur} placeholder="Confirm Password" />}
+                            {!newUser && < input name="name" onBlur={handleBlur} placeholder="Name" />}
+
+                            < input name="email" type="email" onBlur={handleBlur} placeholder="Email" />
+
+                            < input name="password" type="password" onBlur={handleBlur} placeholder="Password" />
+
+                            {!newUser && < input name="confirmPassword" type="password" onBlur={handleBlur} placeholder="Confirm Password" />}
 
                             <input type="submit" id='button' value={!newUser ? 'Create an account' : 'Login'} />
                             {
@@ -137,7 +131,7 @@ const Login = () => {
                             }
 
                         </form>
-                        
+
                     </Typography>
                 </CardContent>
             </Card>
@@ -148,8 +142,8 @@ const Login = () => {
                 </Button>
                 <br />
                 {
-                     <Button onClick={googleSignIn} variant="contained" >
-                            <span><img id="googleLogo" src={googleLogo} alt="" /></span> Continue with google
+                    <Button onClick={googleSignIn} variant="contained" >
+                        <span><img id="googleLogo" src={googleLogo} alt="" /></span> Continue with google
                             </Button>
                 }
             </div>

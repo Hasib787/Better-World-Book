@@ -20,25 +20,22 @@ const ManageBooks = (props) => {
     }
     return (
         <div className="manegeBooks">
-
-            <div className=" navbar-collapse justify-content-center">
-                <ul className="navbar-nav ">
-                    <li className="nav-item">
-                        <p>{bookName}</p>
-                    </li>
-                    <li className="nav-item">
-                        <p>{authorName}</p>
-                    </li>
-                    <li className="nav-item">
-                        <p>$ {addPrice}</p>
-                    </li>
-                    <li className="nav-item">
-                        <p id="deleteIcon"><a onClick={() => handleDeleteItem(_id)}><img src={deleteIcon} alt="" /></a> </p>
-                    </li>
-                </ul>
-            </div>
-
-           
+                <nav className="navber">
+                    <ul>
+                        <li id="bookName">
+                            {bookName}
+                        </li>
+                        <li id="authorName">
+                            {authorName}
+                        </li>
+                        <li id="price">
+                            $ {addPrice}
+                        </li>
+                        <li id="icon">
+                            <a id="deleteIcon" onClick={() => handleDeleteItem(_id)}><img src={deleteIcon} alt="" /></a> 
+                        </li>
+                    </ul>
+                </nav>
         </div>
     );
 };

@@ -32,18 +32,18 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/orders">
+        <PrivateRoute path="/orders">
           <Orders />
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
           <Login />
         </Route>
         <PrivateRoute path="/checkout/:bookId">
           <Checkout />
         </PrivateRoute>
-        <PrivateRoute path="/admin">
+        <Route path="/admin">
           <Admin />
-        </PrivateRoute>
+        </Route>
         <Route path="/addBook">
           <AddBook />
         </Route>

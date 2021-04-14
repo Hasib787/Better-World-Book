@@ -1,17 +1,33 @@
 .manegeBooks{
     background-color: white;
     
-   
 }
-ul li{
+.navber ul {
+    float: right;
+    width: 74%;
+    margin: -11px;
+}
+.navber ul li{
     display: inline;
-    margin-left: 28%;
-    
-  }
+    line-height: 80px;
+}
+#bookName{
+    margin-left: -3%;
+}
+#authorName{
+margin-left: 18%;
+}
+#price{
+    margin-left: 25%;
+    color: black;
+}
+#icon{
+    margin-left: 14%;
+}
 #deleteIcon img{
     width: 25px;
 }
-#managebook-table{
+/* #managebook-table{
     width: 67%;
     margin-left: 27%;
-}
+} */

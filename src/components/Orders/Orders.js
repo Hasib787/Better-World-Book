@@ -26,7 +26,7 @@ const Orders = () => {
                 <h3>You have: {orders.length} Orders</h3>
             </div>
             {
-                orders.map(order => <div className="orders"> <div className="ordersCard">
+                orders.map(order => <div key={order._id} className="orders"> <div className="ordersCard">
                     <table className="table table-borderless">
                         <thead>
                             <tr>

@@ -3,15 +3,31 @@ import Books from '../Books/Books';
 import Header from '../Header/Header';
 import './Home.css';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      '& > * + *': {
+        marginLeft: '50%',
+      },
+    },
+  }));
 
 const Home = () => {
+    const classes = useStyles();
     const [books, setBooks] = useState([]);
     const [cart, setCart] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch('https://ancient-sea-74243.herokuapp.com/books')
         .then(res => res.json())
-        .then(data =>setBooks(data))
+        .then(data =>{
+            setBooks(data)
+            setLoading(false)
+        })
     }, [])
 
     useEffect(()=>{
@@ -58,12 +74,14 @@ const Home = () => {
            <div  className="row">
 
            {
+               loading ? <CircularProgress id="loader" color="secondary" />:
                 books.map(book =><Books 
                     _id={book._id}
                     showAddToCart={true}
                     handleAddProduct={handleAddProduct}
                     book={book}></Books>)
             }
+            
            </div>
         </div>
     );

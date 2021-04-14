@@ -1,10 +1,11 @@
 import React from 'react';
-import Admin from '../Admin/Admin';
+import AdminHeader from '../AdminHeader/AdminHeader';
+
 
 const EditBook = () => {
     return (
         <div>
-            <Admin></Admin>
+            <AdminHeader />
             <div style={{margin: '-662px 0 0 400px'}}>
                 <h1>Page is coming soon...</h1>
             </div>

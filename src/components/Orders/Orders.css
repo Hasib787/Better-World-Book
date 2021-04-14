@@ -1,0 +1,14 @@
+.orderIntro{
+    margin: 39px 0 50px 54px;
+}
+.orders{
+    margin: 0 90px 0 90px;
+}
+.orders table thead{
+    border-bottom: 1px solid lightgray;
+}
+.ordersCard{
+    margin: 25px 0 0 5px;
+    border-radius: 7px;
+    box-shadow: lightgray 10px 10px 25px;
+}

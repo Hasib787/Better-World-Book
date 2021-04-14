@@ -19,7 +19,7 @@ const Checkout = () => {
     const handleOrder = () => {
         // ...selectedDate
         const newBookings = {...loggedInUser, ...product};
-        fetch('http://localhost:5000/addOrder',{
+        fetch('https://ancient-sea-74243.herokuapp.com/addOrder',{
             method:'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newBookings)

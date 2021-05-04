@@ -20,7 +20,7 @@ const Header = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div  className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <ul  className="navbar-nav  fw-bold">
+                    <ul id="navName" className="navbar-nav   fw-bold">
                         <li className="nav-item">
                             <p><a><Link to="/home">Home</Link></a></p>
                         </li>

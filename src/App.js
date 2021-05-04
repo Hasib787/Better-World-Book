@@ -41,9 +41,9 @@ function App() {
         <PrivateRoute path="/checkout/:bookId">
           <Checkout />
         </PrivateRoute>
-        <Route path="/admin">
+        <PrivateRoute path="/admin">
           <Admin />
-        </Route>
+        </PrivateRoute>
         <Route path="/addBook">
           <AddBook />
         </Route>

@@ -1,3 +1,10 @@
+#navName a:-webkit-any-link{
+  text-decoration: none;
+}
+#navName li p a:hover{
+    color: orange!important;
+    transition: 0.3s;
+}
 .header-container{
   margin-top:20px;
 }
@@ -23,4 +30,8 @@ ul li{
   #btn{
     background-color: blue;
    color: white; 
+  }
+  #btn:hover{
+      background-color: orange;
+      transition: 0.5s;
   }
